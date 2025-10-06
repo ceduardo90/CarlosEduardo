@@ -6,23 +6,25 @@ int main(){
     char Estado;
     char Codigo[5];
     char Nome[50];
-    int Populacao;
+    unsigned long int Populacao;
     float Area;
     float PIB;
     int Pontos;
     float DensidadePop;
     float PIBPerCapita;
+    float SuperPoder;
 
     //Variáveis carta 2
     char Estado2;
     char Codigo2[5];
     char Nome2[50];
-    int Populacao2;
+    unsigned long int Populacao2;
     float Area2;
     float PIB2;
     int Pontos2;
     float DensidadePop2;
     float PIBPerCapita2;
+    float SuperPoder2;
 
     //Entrada e saída de dados - carta 1
     printf("Cadastro da carta 1\n");
@@ -37,7 +39,7 @@ int main(){
     scanf("%s", Nome);
 
     printf("Digite a população: \n");
-    scanf("%d", &Populacao);
+    scanf("%lu", &Populacao);
 
     printf("Digite a Area: \n");
     scanf("%f", &Area);
@@ -53,6 +55,9 @@ int main(){
     DensidadePop = (float) Populacao / Area; // Cálculo de densidade populacional
     PIBPerCapita = (float) PIB / Populacao; // Cálculo de PIB Per Capita
 
+    // Cálculo de Super Poder da carta 1
+    SuperPoder = (float) Populacao + Area + PIB + Pontos + PIBPerCapita + DensidadePop;
+
     //Entrada e saída de dados - carta 2
     printf("Cadastro da carta 2\n");
 
@@ -66,7 +71,7 @@ int main(){
     scanf("%s", Nome2);
 
     printf("Digite a população: \n");
-    scanf("%d", &Populacao2);
+    scanf("%lu", &Populacao2);
 
     printf("Digite a Area: \n");
     scanf("%f", &Area2);
@@ -82,12 +87,24 @@ int main(){
     DensidadePop2 = (float) Populacao2 / Area2; // Cálculo de densidade populacional
     PIBPerCapita2 = (float) PIB2 / Populacao2; // Cálculo de PIB Per Capita
 
+    // Cálculo de Super Poder da carta 2
+    SuperPoder2 = (float) Populacao2 + Area2 + PIB2 + Pontos2 + PIBPerCapita2 + DensidadePop2;
+
+     // Variáveis para fazer comparação dos atributos das cartas
+    float resultadoPop = Populacao > Populacao2;
+    float resultadoArea = Area > Area2;
+    float resultadoPIB = PIB > PIB2;
+    float resultadoPontos = Pontos > Pontos2;
+    float resultadoPPC = PIBPerCapita > PIBPerCapita2;
+    float resultadoDensidade = DensidadePop < DensidadePop2;
+    float resultadoSuperPoder = SuperPoder > SuperPoder2;
+
     //Comando "printf" para exibir os dados da carta 1
     printf("Carta 1\n");
     printf("Estado: %c\n", Estado);
     printf("Código: %s\n", Codigo);
     printf("Nome da cidade: %s\n", Nome);
-    printf("População: %d\n", Populacao);
+    printf("População: %lu\n", Populacao);
     printf("Area: %.f\n", Area);
     printf("PIB: %.f\n", PIB);
     printf("Número de pontos turísticos: %d\n", Pontos);
@@ -99,7 +116,7 @@ int main(){
     printf("Estado: %c\n", Estado2);
     printf("Código: %s\n", Codigo2);
     printf("Nome da cidade: %s\n", Nome2);
-    printf("População: %d\n", Populacao2);
+    printf("População: %lu\n", Populacao2);
     printf("Area: %.f\n", Area2);
     printf("PIB: %.f\n", PIB2);
     printf("Número de pontos turísticos: %d\n", Pontos2);
