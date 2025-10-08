@@ -126,13 +126,25 @@ int main(){
     printf("Super Poder: %.f \n\n", SuperPoder2);
 
     // Comando "printf" para exibir resultados de comparacões
+    printf("Comparação de atributos\n");
     printf("População: a carta %lu venceu!\n", resultadoPop);
     printf("Area: a carta %.f venceu!\n", resultadoArea);
     printf("PIB: a carta %.f venceu!\n", resultadoPIB);
     printf("Pontos turísticos: a carta %d venceu!\n", resultadoPontos);
     printf("PIB Per Capita: a carta %.f venceu!\n", resultadoPIB);
     printf("Densidade populacional: a carta %.f venceu!\n", resultadoDensidade);
-    printf("Super Poder: a carta %.f venceu!\n", resultadoSuperPoder);
+    printf("Super Poder: a carta %.f venceu!\n\n", resultadoSuperPoder);
+
+    // Comparação do atributo "população" através da lógica if-else
+    printf("Comparação de cartas - Atributo: População\n");
+    printf("Carta 1 - %s: %lu\n", Nome, Populacao);
+    printf("Carta 2 - %s: %lu\n", Nome2, Populacao2);
+
+    if (Populacao > Populacao2) {
+        printf("Resultado: a carta 1 (%s) venceu!\n", Nome);
+    } else {
+        printf("Resultado: a carta 2 (%s) venceu!\n", Nome2);
+    }
 
     return 0;
 
